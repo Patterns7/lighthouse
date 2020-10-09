@@ -1,0 +1,69 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card table-section">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <strong>1. Basic Table</strong>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <ng-container matColumnDef="firstName">
+                <th mat-header-cell *matHeaderCellDef> First Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+              </ng-container>
+              <ng-container matColumnDef="lastName">
+                <th mat-header-cell *matHeaderCellDef> Last Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+              </ng-container>
+              <ng-container matColumnDef="city">
+                <th mat-header-cell *matHeaderCellDef> City </th>
+                <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <strong>2. Basic Table with Sorting, Pagination and Filter</strong>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-3"></div>
+          <div class="col-md-3"></div>
+          <div class="col-md-3">
+            <div class="input-group">
+              <input matInput (keyup)="applyFilter($event)" placeholder="Name" class="form-control search-input-field">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <table matSort mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
+              <ng-container matColumnDef="firstName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+              </ng-container>
+              <ng-container matColumnDef="lastName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+              </ng-container>
+              <ng-container matColumnDef="city">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
+                <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

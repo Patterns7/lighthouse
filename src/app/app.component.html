@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="sidebar" *ngIf="settings.isLoggedIn">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel" [ngStyle]="{'width': !settings.isLoggedIn ? '100%' : ''}">
+    <app-header *ngIf="settings.isLoggedIn"></app-header>
+    <router-outlet></router-outlet>
+    <div *ngIf="settings.isLoggedIn">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>
+
