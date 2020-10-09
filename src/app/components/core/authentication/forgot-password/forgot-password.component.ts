@@ -18,7 +18,7 @@ export class ForgotPasswordComponent implements OnInit {
   sucessFlag: boolean = false;
 
   constructor(private fb: FormBuilder,
-    private router: Router, private settings: Settings,
+    private router: Router, public settings: Settings,
     private _sharedService: SharedService, private passwordService: PasswordService, private toasterService: ToasterService) { }
 
   ngOnInit() {

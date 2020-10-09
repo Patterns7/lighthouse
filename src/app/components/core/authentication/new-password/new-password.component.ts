@@ -19,7 +19,7 @@ export class NewPasswordComponent implements OnInit {
   hashKey: string = '';
 
   constructor(private fb: FormBuilder,
-    private router: Router, private settings: Settings,
+    private router: Router, public settings: Settings,
     private _sharedService: SharedService, private passwordService: PasswordService, private toasterService: ToasterService, private activatedRoute: ActivatedRoute) { 
       this.hashKey = this.activatedRoute.snapshot.queryParamMap.get('hashKey')||null;
     }

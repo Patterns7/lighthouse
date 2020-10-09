@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   currentDate = new Date();
 
   constructor(private fb: FormBuilder,
-    private router: Router, private settings: Settings,
+    private router: Router, public settings: Settings,
     private _sharedService: SharedService, private loginService: LoginService, private toasterService: ToasterService) { }
 
   ngOnInit() {
